@@ -43,8 +43,6 @@ This is not just a game. **It’s a ritual.**
 ![Main Menu](assets/main-menu.png)  
 ![Credits Screen](assets/credits-screen.png)  
 ![Scoreboard file Overview](assets/scoreboard-file-overview.png)  
-  
-[🎥 Watch the gameplay](demo-gameplay.mp4)  
 
 ---
 

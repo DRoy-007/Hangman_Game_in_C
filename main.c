@@ -1009,6 +1009,7 @@ int main()
                         }
                         if (is_Alpha) break;
                     }
+                    int len = strlen(name);
                     for(int i = 0; i < len; i++)
                     {
                         if (i == 0) name[i] = toupper(name[i]);

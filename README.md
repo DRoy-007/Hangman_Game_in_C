@@ -65,6 +65,11 @@ gcc hangman.c -o hangman
 gcc hangman.c -o hangman.exe
 hangman.exe
 ```
+
+### For direct running from any device
+[Click Here](https://replit.com/@roydebarpan07/HangmanGameinC) and run the app from preview tab and then navigate to the terminal tab to play the game.  
+In the terminal tab, point your cursor just below the screen where the writing of the game ends.
+
 ---
 
 ## 🎮 Controls

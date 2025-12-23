@@ -308,11 +308,11 @@ int choice_Selection_using_Arrows_for_Main_Menu(int* main_menu_Choice)
 // Minimum value that can be passed: Windows -> 0.001 and Linux or MacOS -> 0.000001
 void pause_For(float seconds)
 {
-    # ifdef _WIN32
-        sleep(seconds*1000); // in windows sleep functions takes miliseconds as input
-    # else
-        usleep(seconds*1000000); // in linux or macOS usleep function takes microseconds as input
-    # endif
+#ifdef _WIN32
+    Sleep((DWORD)(seconds * 1000));   // milliseconds
+#else
+    usleep((useconds_t)(seconds * 1000000)); // microseconds
+#endif
 }
 
 void display_Instructions()
@@ -992,10 +992,11 @@ int main()
                     {
                         clear_Console();
                         printf(BLUE "Enter your name: " RESET);
-                        scanf("%s", name);
+                        scanf("%19s", name);
                         while ((getchar()) != '\n'); // clear input buffer before scanf
 
-                        for(int i = 0; i < strlen(name); i++)
+                        int len = strlen(name);
+                        for(int i = 0; i < len; i++)
                         {
                             is_Alpha = isalpha(name[i]);
                             if (is_Alpha == 0) 
@@ -1008,7 +1009,7 @@ int main()
                         }
                         if (is_Alpha) break;
                     }
-                    for(int i = 0; i < strlen(name); i++)
+                    for(int i = 0; i < len; i++)
                     {
                         if (i == 0) name[i] = toupper(name[i]);
                         else name[i] = tolower(name[i]);
